@@ -7,29 +7,45 @@ export const userApi = apiSlice.injectEndpoints({
                 url: "/update",
                 method: "PUT",
                 body: body
-            })
+            }),
+            invalidatesTags: ["user"]
         }),
         addItemToPortfolio: builder.mutation({
             query: (body) => ({
                 url: "/portfolio",
                 method: "POST",
                 body: body,
-            })
+            }),
+            invalidatesTags: ["user"]
         }),
         removeItemFromPortfolio: builder.mutation({
             query: (item_id) => ({
-                url: "/portfolio",
-                method: "DELETE",
-                params: {
-                    item_id
-                }
-            })
+                url: `/portfolio/${item_id}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: ["user"]
+        }),
+        updatePortfolioItem: builder.mutation({
+            query: ({ item_id, body }) => ({
+                url: `/portfolio/${item_id}`,
+                method: 'PUT',
+                body: body,
+            }),
+            invalidatesTags: ['user'],
         }),
         getUser: builder.query({
             query: () => ({
                 url: "/user",
                 method: "GET",
-            })
+            }),
+            providesTags: ["user"]
+        }),
+        getByUsername: builder.query({
+            query: (username) => ({
+                url: `/get/${username}`,
+                method: "GET",
+            }),
+            providesTags: ["user"]
         })
     }),
     overrideExisting: false,
@@ -39,5 +55,7 @@ export const {
     useSetUserDataMutation,
     useAddItemToPortfolioMutation,
     useRemoveItemFromPortfolioMutation,
-    useGetUserQuery
+    useUpdatePortfolioItemMutation,
+    useGetUserQuery,
+    useGetByUsernameQuery
 } = userApi;

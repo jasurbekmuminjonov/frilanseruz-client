@@ -9,12 +9,14 @@
   font-family: "Poppins", "Inter", sans-serif;
 }
 *::selection {
-  background-color: #0758d0;
+  background-color: #0058ff;
+  color: #fff;
 }
 body {
   display: flex;
   justify-content: center;
 }
+
 button,
 input,
 select,
@@ -34,13 +36,14 @@ img {
   pointer-events: none;
 }
 body::-webkit-scrollbar,
-.wrapper::-webkit-scrollbar {
+div::-webkit-scrollbar,
+form::-webkit-scrollbar,
+textarea::-webkit-scrollbar,
+input::-webkit-scrollbar {
   display: none;
 }
 .wrapper {
   max-width: 1440px;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
-  background-color: #000;
-  color: #fff;
 }

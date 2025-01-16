@@ -6,6 +6,8 @@
   justify-content: space-between;
   padding-inline: 50px;
   padding-block: 15px;
+  background-color: #000;
+  color: #fff;
 }
 .hero-section > img {
   max-width: 40%;
@@ -17,11 +19,12 @@
   gap: 12px;
 }
 .left > h3 > span {
-  background-color: #0758d0;
   padding-inline: 6px;
   font-weight: 400;
   user-select: none;
   padding-block: 1px;
+  border: 1px solid #fff;
+  border-radius: 5px;
 }
 .left > p {
   font-family: "Inter";
@@ -34,9 +37,15 @@
 }
 .left > button {
   height: 40px;
-  width: 250px;
-  background-color: #0758d0;
+  width: 200px;
+  background-color: transparent;
   color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
   font-weight: 600;
 }
 @media (max-width: 1024px) {
