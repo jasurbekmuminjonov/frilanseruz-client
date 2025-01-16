@@ -42,7 +42,7 @@ const Hero = () => {
     signUp({ email: res.profileObj.email })
       .then((response) => {
         Cookies.set("access_token", response.data.token);
-        if (response.data.username !== "") {
+        if (response.data.username) {
           window.location.href = `/${response.data.username}`;
         } else {
           window.location.href = "/edit";
@@ -88,7 +88,7 @@ const Hero = () => {
           <button
             onClick={() =>
               navigate(
-                userData.username !== "" ? `/${userData.username}` : "/edit"
+                userData.fullname !== "" ? `/${userData.username}` : "/edit"
               )
             }
           >
