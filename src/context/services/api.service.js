@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Cookies from "js-cookie";
 
 const baseQuery = fetchBaseQuery({
-    // baseUrl: "https://apifrilanseruz.vercel.app",
-    baseUrl: "http://localhost:8080",
+    baseUrl: "https://apifrilanseruz.vercel.app",
+    // baseUrl: "http://localhost:8080",
 
     prepareHeaders: (headers, { getState }) => {
         const token = Cookies.get("access_token");
