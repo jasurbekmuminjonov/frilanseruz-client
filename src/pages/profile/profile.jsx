@@ -8,6 +8,7 @@ import {
 } from "../../context/services/user.service";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { CiGlobe, CiUser } from "react-icons/ci";
+import ReactMarkdown from "react-markdown";
 import {
   FaDribbble,
   FaFacebook,
@@ -178,7 +179,10 @@ const Profile = () => {
         </div>
         <div className="about">
           <p>Обо мне</p>
-          <span>{userData?.about}</span>
+          {/* <span style={{ whiteSpace: "pre-line" }}>{userData?.about}</span> */}
+          <span>
+            <ReactMarkdown children={userData?.about} />
+          </span>
           <p>{userData.email}</p>
         </div>
       </div>
